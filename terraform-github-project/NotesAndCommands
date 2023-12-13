@@ -1,0 +1,10 @@
+commands:
+terraform init // to dowbload plungin for provider
+terraform provider // to disply providers info
+terraform apply --auto-approve   // this command is for apply repo
+terraform destroy --target <lablesnames>  // this will delete only specified
+terraform destroy // to delete all the changes, this will delete whatever you have created using resources
+terraform validate // to validate the changes if we did anything wrong or not in configuration
+terraform refresh // ye kuch be change hua cloud par to usko local me be save karleta like in tfstate file me
+terraform plan // always first command
+terraform fmt / to correct all the indentation in files
