@@ -1,0 +1,19 @@
+python important notes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to create venv on windows Using cmd:
+steps:
+	python -m venv venv
+	cd /venv/Script/
+	activate
+here you can directly see ur in venv
+-------------------------
+How to create venv on windows Using Vscode:
+steps:
+	python -m venv venv
+	cd /venv/Script/
+	./activate.bat
+here you can't see ur in venv but while executing python file then you will see which executable file is using
+and you can see using
+clt + shift + p ==> python select enterpriter {if not showing then search for python create env then select venv and repeat the steps}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
