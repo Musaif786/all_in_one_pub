@@ -5,13 +5,13 @@ from datetime import datetime
 from datetime import timedelta
 
 
-#token = "dt0c01.ZOKFY575GSSIIJ7FSIUSDQZO.TECWGFROZEXGAOFI2D5IJ2KT3AUWOBJUKYK7TGDUHJLFJSXGS5CS33AILL23ZK4Z"
+#token = "dt0c01.24char.TECWGFROZEXGAOFI2D5IJ2KT3AUWOBJUKYK7TGDUHJLFJSXGS5CS33AILL23ZK4Z"
 
-dyna_url = "https://rjt15023.live.dynatrace.com"
-api_token = "dt0c01.ZOKFY575GSSIIJ7FSIUSDQZO.TECWGFROZEXGAOFI2D5IJ2KT3AUWOBJUKYK7TGDUHJLFJSXGS5CS33AILL23ZK4Z"
+dyna_url = "https://rjt123.live.dynatrace.com"
+api_token = "dt0c01.24.TECWGFROZEXGAOFI2D5IJ2KT3AUWOBJUKYK7TGDUHJLFJSXGS5CS33AILL23ZK4Z"
 
 
-#https://rjt15023.live.dynatrace.com/api/v2/apiTokens
+#https://rjt123.live.dynatrace.com/api/v2/apiTokens
 def get_problems():
  
 
