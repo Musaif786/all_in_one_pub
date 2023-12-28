@@ -16,13 +16,13 @@ def reqFun(params):
 
 def mainFun(): 
     
-    gatherInfo = input("What action do you want to perform?\n==> Send mail [Press 1]\n==> Want return call [Press 2]\n==> Want to send Whatsapp msg [Press 3]\n==> Other activity [Press 4]\n\n==>")
+    gatherInfo = input("What action do you want to perform..?\n==> Send mail [Press 1]\n==> Want return call [Press 2]\n==> Want to send Whatsapp msg [Press 3]\n==> Other activity [Press 4]\n\n==>")
     
     if not gatherInfo.isdigit():
-         print("invalid input, Please provide the correct opition")
+         print("invalid input, Please provide the correct opition...")
          exit()
 
-    if gatherInfo == "1":
+    if gatherInfo == "1": # sending mail
         mailid = input("Please Enter the Mail-Id : ==>")
         mail = input("Please write your mail/msg here: ==>")
         params = {
@@ -30,15 +30,15 @@ def mainFun():
         "msg": mail,
         "mailid": mailid,
         }
-        reqFun(params)
-    elif gatherInfo == "2":
+        #reqFun(params)
+    elif gatherInfo == "2": # calling
         number = int(input("Please Enter the phone number: ==>"))
         params = {
         "speak": "call",
          "num": number,
         }
-        reqFun(params)
-    elif gatherInfo == "3":
+        #reqFun(params)
+    elif gatherInfo == "3": # whatsapp msg
         msg = input("Please Enter Your Msg here: ==>")
         number = int(input("Please Enter the phone number: ==>"))
 
@@ -47,15 +47,20 @@ def mainFun():
         "msg": msg,
         "num": number,
         }
-        reqFun(params)
-    elif gatherInfo == "4":
+        #reqFun(params)
+    elif gatherInfo == "4": # others
         speakCmd = input("Please Enter below commands: \n==>To find the device enter [findmydevice]\n==>To enable data enter [data]\n==>To location enter [location]\n==>To block screen enter [touch]\n==>To start alarm enter [alarm]\n==>Enter cancel to kill all the process or activity [cancel]\n\n==>")
         params = {
         "speak": speakCmd if speakCmd != "" else "Hello! Everyone",
         }
-        reqFun(params)
+        #reqFun(params)
+    else:
+        print("limit crossed, please try again from given options")
+        exit()
+
+    reqFun(params)
     
 
 if __name__ == "__main__":
-    print("ok")
+    print("Starting...")
     mainFun()
