@@ -31,7 +31,7 @@ elif pullPush == "pull" or pullPush == "2":
     subprocess.call(['git','status'] ,cwd=pythonPath)
 else:
     print(30*"*")
-    print("something wet wrong please try again...")
+    print("something wet wrong please try again....")
     print(30*"*")
 
 time.sleep(5)
