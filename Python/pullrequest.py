@@ -22,4 +22,4 @@ elif pullPush == "pull" or pullPush == "2":
     print("pulling data")
     subprocess.call(['git','status'] ,cwd=pythonPath)
 else:
-    print("something wet wrong please try again..")
+    print("something wet wrong please try again.. dewani")
