@@ -4,4 +4,4 @@ terraform-github-project/github-provider/terraform.tfstate.backup
 /terraform-github-project/github-provider/terraform.tfstate.backup
 *terraform.tfvars
 *terraform.tfstate
-/terraform-github-project/github-provider/.terraform.lock.hcl
+*terraform.lock.hcl
