@@ -5,3 +5,4 @@ terraform-github-project/github-provider/terraform.tfstate.backup
 *terraform.tfvars
 *terraform.tfstate
 *terraform.lock.hcl
+*passwordSendMail.py
