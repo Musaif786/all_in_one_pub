@@ -5,8 +5,9 @@ import random
 
 def fromFile():
 
-    filename = ""
-    with open(filename,"r+") as f:
+    #file to take passowrd
+    filename = "test.txt"
+    with open(filename,"w+") as f:
       file = file.read()
       return file
     
@@ -18,7 +19,7 @@ def passwordCrack(passwd):
 
 
         # if have any file and want to find passwrd from the file then use file method to find the passowrd.
-        filetoCheck = fromFile()
+        # filetoCheck = fromFile()
 
 
         #variables
@@ -33,7 +34,8 @@ def passwordCrack(passwd):
                 break
             if count >=500000:
                 # print(f"Tried {check} times, password not found Please try again...")
-                break
+                # break
+                pass
     except KeyboardInterrupt:
         print("Job Terminated!")
 

@@ -57,15 +57,38 @@ VALUES(101,"Musaif",101),(102,"Khan",102),(103,"Manu",103);
 
 select * from teacher;
 
+-- select * into newtable
+-- from teacher
+-- where id =103;
+
+INSERT INTO teacher
+VALUES(110,"Musaif",104),(108,"Khan",103),(109,"Manu",103),(106,"musaif",103),(105,"Manu",102);
 
 
+select count(id) from teacher
+group by name;
 
 
+-- debricated
+-- backup database musaif
+-- to disk = 'D:\Vscode-All scripts\All_in_one';
 
+select * from m;
 
+alter table m
+modify column lname varchar(100);
 
+-- Adding column-- 
+alter table m
+add lastname varchar(30);
 
+-- Remove column
+alter table m
+drop column lastname;
 
+-- Rename column
+alter table m
+rename column lastname to lname
 
 -- show tables;
 
