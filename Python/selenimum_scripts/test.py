@@ -10,7 +10,7 @@ Testing file
 driver = webdriver.Edge()
 
 # Set the implicitly wait timeout to 10 seconds
-driver.implicitly_wait(30)
+driver.implicitly_wait(10)
 driver.maximize_window()
 
 # Open the website
