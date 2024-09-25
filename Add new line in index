@@ -1,0 +1,38 @@
+# List of indexes to search for
+indexes = ['Index1', 'Index2', 'Index3', 'Index4', 'Index5']
+
+# Word to add after the 'Frozen' line
+word_to_add = "NewWord"
+
+# Input file path (same file will be modified)
+file_path = 'index.conf'
+
+def add_word_after_frozen(file_path, indexes, word_to_add):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    new_lines = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        new_lines.append(line)
+        
+        # Check if this line contains any of the indexes
+        if any(f'[{index}]' in line for index in indexes):
+            # Look for 'Frozen' in the following lines for the current index
+            while i < len(lines):
+                i += 1
+                new_lines.append(lines[i])
+                if 'Frozen' in lines[i]:
+                    # Add the new word on the next line after 'Frozen'
+                    new_lines.append(word_to_add + '\n')
+                    break
+
+        i += 1
+
+    # Write the updated content back to the file
+    with open(file_path, 'w') as file:
+        file.writelines(new_lines)
+
+if __name__ == "__main__":
+    add_word_after_frozen(file_path, indexes, word_to_add)
