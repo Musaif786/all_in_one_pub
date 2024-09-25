@@ -36,3 +36,63 @@ def add_word_after_frozen(file_path, indexes, word_to_add):
 
 if __name__ == "__main__":
     add_word_after_frozen(file_path, indexes, word_to_add)
+
+
+
+
+
+
+
+
+Ansible back-up 
+
+
+---
+# tasks/splunk_kvstore_backup.yml
+
+- name: Take full Splunk KV store backup using dzdo
+  become: yes
+  become_method: dzdo
+  become_user: root
+  shell: |
+    su - splunk -c '/opt/splunk/bin/splunk backup kvstore'
+  args:
+    creates: /opt/splunk/var/lib/splunk/kvstorebackup
+  register: kvstore_backup_result
+  changed_when: "'Backup completed successfully' in kvstore_backup_result.stdout"
+  tags: 
+    - kvstore-backup
+
+
+
+
+
+-------------- 
+
+Prompt
+
+
+
+
+
+
+---
+# tasks/splunk_kvstore_backup.yml
+
+- name: Take full Splunk KV store backup using dzdo and handle yes/no prompts
+  become: yes
+  become_method: dzdo
+  become_user: root
+  expect:
+    command: su - splunk -c '/opt/splunk/bin/splunk backup kvstore'
+    responses:
+      'Do you want to continue?': 'yes\n'
+      'Are you sure you want to proceed?': 'yes\n'
+  args:
+    creates: /opt/splunk/var/lib/splunk/kvstorebackup
+  register: kvstore_backup_result
+  changed_when: "'Backup completed successfully' in kvstore_backup_result.stdout"
+  tags: 
+    - kvstore-backup
+
+---------------------
