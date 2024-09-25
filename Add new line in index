@@ -96,3 +96,22 @@ Prompt
     - kvstore-backup
 
 ---------------------
+
+
+
+---
+# tasks/splunk_kvstore_backup.yml
+
+- name: Take full Splunk KV store backup using dzdo and auto-respond yes
+  become: yes
+  become_method: dzdo
+  become_user: root
+  shell: |
+    echo -e "yes\nyes\n" | su - splunk -c '/opt/splunk/bin/splunk backup kvstore'
+  args:
+    creates: /opt/splunk/var/lib/splunk/kvstorebackup
+  register: kvstore_backup_result
+  changed_when: "'Backup completed successfully' in kvstore_backup_result.stdout"
+  tags: 
+    - kvstore-backup
+
